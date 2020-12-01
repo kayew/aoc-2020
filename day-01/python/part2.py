@@ -8,6 +8,4 @@ for i in num:
     for j in num:
         for k in num:
             if i+j+k == 2020:
-                result = i*j*k
-
-print(result)
+                print(i*j*k)
