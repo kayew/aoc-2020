@@ -9,11 +9,13 @@ local function parseInput()
 end
 
 local num = parseInput()
+local target = 2020
+-- local target = 99920044
 
 local function part1(arr)
     for i=1, #arr do
         for j=1, #arr do
-            if arr[i] + arr[j] == 2020 then
+            if arr[i] + arr[j] == target then
                 return arr[i] * arr[j]
             end
         end
@@ -24,7 +26,7 @@ local function part2(arr)
     for i=1, #arr do
         for j=1, #arr do
             for k=1, #arr do
-                if arr[i] + arr[j] + arr[k] == 2020 then
+                if arr[i] + arr[j] + arr[k] == target then
                     return arr[i] * arr[j] * arr[k]
                 end
             end

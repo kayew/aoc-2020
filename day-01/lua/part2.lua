@@ -9,17 +9,19 @@ local function parseInput()
 end
 
 local num = parseInput()
-local result
+local target = 2020
+-- local target = 99920044
 
-for i=1, #num do
-    for j=1, #num do
-        for k=1, #num do
-            if num[i] + num[j] + num[k] == 2020 then
-                result = num[i] * num[j] * num[k]
-                break
+local function part2()
+    for i=1, #num do
+        for j=1, #num do
+            for k=1, #num do
+                if num[i] + num[j] + num[k] == target then
+                    return num[i] * num[j] * num[k]
+                end
             end
         end
     end
 end
 
-print(result)
+print(print(string.format("%.0f",part2())))
