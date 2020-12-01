@@ -11,6 +11,8 @@ def part2():
         for j in num:
             for k in num:
                 if i+j+k == target:
-                    return i*j*k
+                    assert i*j*k == 96047280
+                    return [i, j, k, i*j*k]
 
-print(part2())
+result = part2()
+print(f"{result[0]} * {result[1]} * {result[2]} = {result[3]}")

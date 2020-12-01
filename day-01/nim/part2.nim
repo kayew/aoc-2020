@@ -1,18 +1,20 @@
 import os
 import strutils
+import sequtils
+import strformat
 
 var 
     target = 2020
-    nums = newSeq[int](0)
+    # target = 99920044
+    nums = toSeq(lines(paramStr(1))).mapit(parseInt it)
 
-for line in lines(paramStr(1)):
-    nums.add(parseInt(line))
-
-proc main(): int =
+proc main(): seq = 
     for i in nums:
         for j in nums:
             for k in nums:
                 if i+j+k == target:
-                    return i*j*k
-
-echo main()
+                    assert i*j*k == 96047280
+                    return @[i,j,k,i*j*k]
+            
+var result = main()
+echo fmt"{result[0]} * {result[1]} * {result[2]} = {result[3]}"

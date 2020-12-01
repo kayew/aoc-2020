@@ -17,11 +17,12 @@ local function part2()
         for j=1, #num do
             for k=1, #num do
                 if num[i] + num[j] + num[k] == target then
-                    return num[i] * num[j] * num[k]
+                    return {num[i], num[j], num[k], num[i] * num[j] * num[k]}
                 end
             end
         end
     end
 end
 
-print(print(string.format("%.0f",part2())))
+local result = part2()
+print("Part 2: "..result[1].." * "..result[2].." * "..result[3].." = "..result[4])
