@@ -3,10 +3,9 @@ import strutils
 import sequtils
 import strformat
 
-var 
-    target: int = 2020
-    # target = 99920044
-    nums = toSeq(lines(paramStr(1))).mapit(parseInt it)
+var nums = toSeq(lines(paramStr(1))).mapit(parseInt it)
+let target = 2020
+# let target = 99920044
 
 proc main(): seq = 
     for i in nums:
