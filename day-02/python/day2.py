@@ -7,7 +7,7 @@ def part1():
     file = open(sys.argv[1], "r")
     for line in file:
         param = line.split()
-        passRange = param[0].split("-")
+        passRange = [int(x) for x in param[0].split('-')]
         targetLetter = param[1][0]
         password = param[2]
 
@@ -23,13 +23,13 @@ def part2():
     for line in file:
         letterMatch = 0
         param = line.split()
-        passIndex = param[0].split("-")
+        passIndex = [int(x) for x in param[0].split('-')]
         targetLetter = param[1][0]
         password = param[2]
 
-        if password[int(passIndex[0])-1] == targetLetter:
+        if password[passIndex[0]-1] == targetLetter:
             letterMatch += 1
-        if password[int(passIndex[1])-1] == targetLetter:
+        if password[passIndex[1]-1] == targetLetter:
             letterMatch += 1
 
         if letterMatch == 1:
