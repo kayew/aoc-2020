@@ -4,7 +4,6 @@ import sys
 
 file = open(sys.argv[1], "r")
 total = 0
-letterMatch = 0
 
 for line in file:
     param = line.split()
