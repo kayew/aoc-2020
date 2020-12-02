@@ -20,4 +20,5 @@ for line in file:
     if letterMatch == 1:
         total += 1
 
+file.close()
 print(f"total: {total}")

@@ -14,6 +14,7 @@ def part1():
         letterMatch = password.count(targetLetter)
         if letterMatch >= int(passRange[0]) and letterMatch <= int(passRange[1]):
                 total += 1
+    file.close()
     return total
 
 def part2():
@@ -33,6 +34,7 @@ def part2():
 
         if letterMatch == 1:
             total += 1
+    file.close()
     return total
 
 print(f"Part 1: {part1()}, Part 2: {part2()}")

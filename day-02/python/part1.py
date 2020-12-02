@@ -15,4 +15,5 @@ for line in file:
     if letterMatch >= int(passRange[0]) and letterMatch <= int(passRange[1]):
             total += 1
             
+file.close()
 print(f"total: {total}")
