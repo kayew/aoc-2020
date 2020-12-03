@@ -5,6 +5,9 @@ import sys
 data = [x.strip() for x in open(sys.argv[1], 'r').readlines()]
 
 slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]  # right, down
+# right = [2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 32, 36, 48, 54, 64]
+# down = [1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 47]
+# slopes = [(x,y) for x in right for y in down]
 
 numRows = len(data)  # changes between the example and actual input
 numCols = len(data[0])  # ^
