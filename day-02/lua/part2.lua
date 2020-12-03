@@ -4,19 +4,19 @@ local function _split(str, on, set)
     local ret = {};
     local s, e;
     while str:find(on) do
-            s, e = str:find(on);
-            local result = str:sub(0, s - 1);
-            if set then
-                    ret[result] = "";
-            else
-                    table.insert(ret, result);
-            end
-            str = str:sub(e + 1);
+        s, e = str:find(on);
+        local result = str:sub(0, s - 1);
+        if set then
+                ret[result] = "";
+        else
+                table.insert(ret, result);
+        end
+        str = str:sub(e + 1);
     end
     if set then
-            ret[str] = "";
+        ret[str] = "";
     else
-            table.insert(ret, str);
+        table.insert(ret, str);
     end
     return ret;
 end
