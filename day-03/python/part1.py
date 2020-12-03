@@ -20,5 +20,3 @@ for y in range(0, numRows, slope[1]):  # -> step right by factor of right (in th
     x = (x + slope[0]) % numCols  # allow for "looping" around on the x-axis
     
 print(f"trees: {trees}")
-
-
