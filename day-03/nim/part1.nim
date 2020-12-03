@@ -2,8 +2,9 @@ import os
 import sequtils
 import strformat
 
+let data: seq[string] = toSeq(lines(paramStr(1)))
+
 var 
-    data: seq[string] = toSeq(lines(paramStr(1)))
     slope: tuple = (3, 1)
     numRows: int = len(data)
     numCols: int = len(data[0])
