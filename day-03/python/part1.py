@@ -14,7 +14,7 @@ numCols = len(data[0])  # ^
 trees = 0
 x = 0
 
-for y in range(0, numRows, slope[1]):  # -> step right by factor of right 
+for y in range(0, numRows, slope[1]):  # -> step right by factor of right (in this case, step right by a factor)
     if data[y][x] == '#':  # this is not a 2d array, it is checking the y and x-axis for a "tree"
         trees += 1
     x = (x + slope[0]) % numCols  # allow for "looping" around on the x-axis
