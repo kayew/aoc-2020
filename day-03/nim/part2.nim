@@ -2,9 +2,11 @@ import os
 import sequtils
 import strformat
 
-var 
+let
     data: seq[string] = toSeq(lines(paramStr(1)))
     slopes: seq[tuple] = @[(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
+
+var 
     numRows: int = len(data)
     numCols: int = len(data[0])
     totalTrees: int = 1
