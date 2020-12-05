@@ -32,8 +32,6 @@ for line in data:
 
     sID.append(fRow * 8 + fCol)
 
-sID.sort()
-
 for x in range(min(sID), max(sID)):
     if x not in sID:
         print(x)
