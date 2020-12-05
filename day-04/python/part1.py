@@ -4,8 +4,7 @@ import sys
 
 required_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]  # "cid" not needed as it is optional
 
-with open(sys.argv[1], 'r') as f:
-    passports = f.read().split("\n\n")
+passports = [f for f in open(sys.argv[1], 'r').read().split("\n\n")]
 
 valid = 0
 

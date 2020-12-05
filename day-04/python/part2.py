@@ -7,8 +7,7 @@ required_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]  # "cid" not
 valid_ecl = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
 valid_units = ["cm", "in"]
 
-with open(sys.argv[1], 'r') as f:
-    passports = f.read().split("\n\n")
+passports = [f for f in open(sys.argv[1], 'r').read().split("\n\n")]
 
 valid = 0
 
