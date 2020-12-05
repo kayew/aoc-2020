@@ -2,33 +2,13 @@
 
 import sys
 
-data = [x for x in open(sys.argv[1], "r").read().split("\n")]
+data = [x.replace('F', '0').replace('B', '1').replace('L', '0').replace('R', '1') for x in open(sys.argv[1], "r").read().split("\n")]
 
 sID = []
 
 for line in data:
-    R = list(range(0, 128))
-    C = list(range(0, 8))
-    row = line[:7]
-    col = line[-3:]
-
-    for r in row:
-        l = int(len(R)/2)
-        if r == "F": # LOWER
-            R = R[:l]
-        elif r == "B": # UPPER
-            R = R[l:]
-    
-    fRow = R[0]
-
-    for c in col:
-        l = int(len(C)/2)
-        if c == "R": # UPPER 
-            C = C[l:]
-        elif c == "L": # LOWER
-            C = C[:l]
-
-    fCol = C[0]
+    fRow = int(line[:7], 2)
+    fCol = int(line[-3:], 2)
 
     sID.append(fRow * 8 + fCol)
 
