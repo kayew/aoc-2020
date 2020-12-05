@@ -3,10 +3,9 @@
 import sys
 
 def part1(d):
-    return max(d)
+    return d[-1]
 
 def part2(d):
-    d.sort()
     for x in range(d[0], d[-1]):
         if x not in d:
             return x
@@ -20,5 +19,7 @@ for line in data:
     fCol = int(line[-3:], 2)
 
     sID.append(fRow * 8 + fCol)
+
+sID.sort()
 
 print(f"Part 1: {part1(sID)}\nPart 2: {part2(sID)}")
