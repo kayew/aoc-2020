@@ -9,7 +9,7 @@ total = 0
 for q in data:
     u = set()
     for c in q:
-        u = u.union(set(c))
+        u = u.union(set(c)) # or u |= set(c)
     
     total += len(u)
     

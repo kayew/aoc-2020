@@ -9,7 +9,7 @@ total = 0
 for q in data:
     u = set(string.ascii_lowercase)
     for c in q:
-        u = u.intersection(set(c))
+        u = u.intersection(set(c)) # or u &= set(c)
     
     total += len(u)
     
