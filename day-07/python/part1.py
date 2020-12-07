@@ -20,23 +20,23 @@ for k,v in d.items():
             d[k] = []
             continue
 
-def can_contain():
+def can_contain(bag_name):
     total = 0
     for sb in d:
-        total += check_sub_bag(sb)
+        total += check_sub_bag(sb, bag_name)
     return total
 
-def check_sub_bag(sub):
+def check_sub_bag(sub, bag_name):
     total = 0
-    if sub == "shiny gold":
+    if sub == bag_name:
         return 1
     for l in d[sub]:
-        if l == "shiny gold": 
+        if l == bag_name: 
             total += 1
         else:
-            ans = check_sub_bag(l)
+            ans = check_sub_bag(l, bag_name)
             if ans > 0:
                 return ans
     return total
 
-print(can_contain()-1)
+print(can_contain("shiny gold")-1)
