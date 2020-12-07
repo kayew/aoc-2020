@@ -11,7 +11,7 @@ let data = paramStr(1).string.readfile.split("\n\n")
 var total = 0
 
 for q in data:
-  var u: set[char] = {}
+  var u: set[char]
   for c in q.split():
     u = u + c.toSet
 
