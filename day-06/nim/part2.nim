@@ -1,14 +1,19 @@
 from os import paramStr
 import strutils, sets
 
+type SetType = char or byte or bool or int16 or uint16 or enum
+proc toSet[T: SetType](ar: openArray[T]): set[T] =
+  for x in ar:
+    result.incl(x)
+
 let data = paramStr(1).string.readfile.split("\n\n")
 
 var total = 0
 
 for q in data:
-    var u = toHashSet(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'])
+    var u: set[char] = {'a'..'z'}
     for c in q.split():
-        u = u * toHashSet(c)
+        u = u * c.toSet
 
     total += len(u)
 
