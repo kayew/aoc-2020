@@ -2,24 +2,25 @@
 
 import sys
 
-data = [x for x in open(sys.argv[1], "r").readlines()]
+data = [x.strip() for x in open(sys.argv[1], "r").readlines()]
 
 acc = 0
-visted_pos = set()
+visited_pos = set()
 i = 0
 
-while True:
+while i not in visited_pos and i < len(data):
     ins = data[i][:3]
-    if i in visted_pos:
+    amt = int(data[i][4:])
+    if i in visited_pos:
         break
     if ins == "acc":
-        visted_pos.add(i)
-        acc += int(data[i][4:])
+        visited_pos.add(i)
+        acc += amt
         i += 1
         continue
     if ins == "jmp":
-        visted_pos.add(i)
-        i += int(data[i][4:])
+        visited_pos.add(i)
+        i += amt
         continue
     if ins == "nop":
         i += 1
