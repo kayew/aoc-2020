@@ -29,7 +29,7 @@ def execute(d):
 
     return i, acc
 
-for j in [i for i in range(len(data)) if data[i].startswith("jmp")]:
+for j in [i for i in range(len(data)) if data[i][:3] == "jmp"]:
     data[j] = data[j].replace("jmp", "nop")
     i, acc = execute(data)
     data[j] = data[j].replace("nop", "jmp")
