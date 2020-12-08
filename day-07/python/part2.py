@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-import re
 
 # fmt: off
 data = [x.strip().split(" bags contain ") for x in open(sys.argv[1]).readlines()]
@@ -15,9 +14,17 @@ for k,v in d.items():
     t = []
     for i in v:
         if i[0] != "n":
-            t.append((i[2:].split(" bag")[0], int(i[0])))
+            t.append((int(i[0]), i[2:].split(" bag")[0]))
             d[k] = t
         else:
             d[k] = []
             continue
 
+def get_total_bag(bag):
+    total = 1
+    if bag in d:
+        for i in d[bag]:
+            total += i[0] * get_total_bag(i[1])
+    return total
+
+print(get_total_bag("shiny gold")-1)
