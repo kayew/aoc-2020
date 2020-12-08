@@ -18,11 +18,14 @@ def execute(d):
             visited_pos.add(i)
             acc += amt
             i += 1
+            continue
         if ins == "jmp":
             visited_pos.add(i)
             i += amt
+            continue
         if ins == "nop":
             i += 1
+            continue
 
     return i, acc
 
