@@ -9,7 +9,7 @@ def execute(d):
     visited_pos = set()
     i = 0
 
-    while i not in visited_pos and i < len(data):
+    while i not in visited_pos and i < len(d):
         ins = d[i][:3]
         amt = int(d[i][4:])
         if i in visited_pos:
@@ -29,10 +29,13 @@ def execute(d):
 
     return i, acc
 
-for j in [i for i in range(len(data)) if data[i][:3] == "jmp"]:
-    data[j] = data[j].replace("jmp", "nop")
-    i, acc = execute(data)
-    data[j] = data[j].replace("nop", "jmp")
-    if i == len(data):
-        print(acc)
-        break
+def switch_op(inst, swap, inst_list):
+    for j in [i for i in range(len(inst_list)) if inst_list[i][:3] == inst]:
+        inst_list[j] = inst_list[j].replace(inst, swap)
+        i, acc = execute(inst_list)
+        inst_list[j] = inst_list[j].replace(swap, inst)
+        if i == len(inst_list):
+            return acc
+
+for x in [("jmp", "nop"), ("nop", "jmp")]:
+    print(switch_op(x[0], x[1], data))
