@@ -11,8 +11,6 @@ i = 0
 while i not in visited_pos and i < len(data):
     ins = data[i][:3]
     amt = int(data[i][4:])
-    if i in visited_pos:
-        break
     if ins == "acc":
         visited_pos.add(i)
         acc += amt

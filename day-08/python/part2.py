@@ -12,8 +12,6 @@ def execute(d):
     while i not in visited_pos and i < len(d):
         ins = d[i][:3]
         amt = int(d[i][4:])
-        if i in visited_pos:
-            break
         if ins == "acc":
             visited_pos.add(i)
             acc += amt
