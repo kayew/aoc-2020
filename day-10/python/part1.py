@@ -2,9 +2,9 @@
 
 import sys
 
-adapter_list = sorted([0] + [int(x.strip()) for x in open(sys.argv[1], "r").readlines()])
+adapter_list = sorted([int(x.strip()) for x in open(sys.argv[1], "r").readlines()])
 
-diff_1 = 0
+diff_1 = 1
 diff_3 = 0
 highest = adapter_list[-1] + 3
 adapter_list.append(highest)
